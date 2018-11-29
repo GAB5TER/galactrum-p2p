@@ -10,7 +10,7 @@ var expect = chai.expect;
 var sinon = require('sinon');
 var fs = require('fs');
 
-var bitcore = require('bitcore-lib-dash');
+var bitcore = require('galactrum-lib');
 var _ = bitcore.deps._;
 var P2P = require('../');
 var Peer = P2P.Peer;
@@ -23,6 +23,7 @@ describe('Peer', function() {
 
   describe('Integration test', function() {
     it('parses this stream of data from a connection', function(callback) {
+      debugger;
       var peer = new Peer('');
       var stub = sinon.stub();
       var dataCallback;
