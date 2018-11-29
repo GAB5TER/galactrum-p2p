@@ -1,7 +1,7 @@
 {
-  "name": "@dashevo/dashcore-p2p",
+  "name": "galactrum-p2p",
   "version": "1.1.6",
-  "description": "Interface to the dash P2P network for Dashcore",
+  "description": "Interface to the Galactrum P2P network",
   "author": "BitPay <dev@bitpay.com>",
   "main": "index.js",
   "scripts": {
@@ -41,25 +41,30 @@
     },
     {
       "name": "Elichai Turkel"
+    },
+    {
+      "name": "GAB5TER",
+      "email": "GAB5TER@protonmail.com"
     }
   ],
   "keywords": [
     "bitcoin",
     "bitcore",
-    "dashcore"
+    "dashcore",
+    "galactrum"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dashevo/dashcore-p2p.git"
+    "url": "https://github.com/GAB5TER/glactrum-p2p.git"
   },
   "dependencies": {
-    "bitcore-lib-dash": "^0.15.2",
+    "galactrum-lib": "GAB5TER/galactrum-lib",
     "bloom-filter": "^0.2.0",
     "node-buffers": "^0.1.1",
     "socks5-client": "^0.3.6"
   },
   "devDependencies": {
-    "bitcore-build-dash": "dashpay/bitcore-build-dash",
+    "galactrum-build": "GAB5TER/galactrum-build",
     "brfs": "^1.2.0",
     "chai": "~1.10.0",
     "gulp": "^3.8.10",
