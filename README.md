@@ -1,23 +1,14 @@
-Dashcore P2P
+Galactrum P2P
 =======
 
-[![NPM Package](https://img.shields.io/npm/v/@dashevo/dashcore-p2p.svg?style=flat-square)](https://www.npmjs.org/package/@dashevo/dashcore-p2p)
-[![Build Status](https://img.shields.io/travis/dashevo/dashcore-p2p.svg?branch=master&style=flat-square)](https://travis-ci.org/dashevo/dashcore-p2p)
-[![Coverage Status](https://img.shields.io/coveralls/dashevo/dashcore-p2p.svg?style=flat-square)](https://coveralls.io/r/dashevo/dashcore-p2p?branch=master)
-
-`dashcore-p2p` adds Dash protocol support for Dashcore.
-
-See [the main dashcore repo](https://github.com/dashevo/dashcore) for more information.
+`galactrum-p2p` adds Galactrum protocol support for Orecore.
 
 ## Getting Started
 
-```sh
-npm install @dashevo/dashcore-p2p
-```
-In order to connect to the Dash network, you'll need to know the IP address of at least one node of the network, or use [Pool](/docs/pool.md) to discover peers using a DNS seed.
+In order to connect to the Galactrum network, you'll need to know the IP address of at least one node of the network, or use [Pool](/docs/pool.md) to discover peers using a DNS seed.
 
 ```javascript
-var Peer = require('@dashevo/dashcore-p2p').Peer;
+var Peer = require('galactrum-p2p').Peer;
 
 var peer = new Peer({host: '127.0.0.1'});
 
@@ -47,10 +38,10 @@ Take a look at the [bitcore guide](http://bitcore.io/guide/peer.html) on the usa
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/dashevo/dashcore/blob/master/CONTRIBUTING.md) on the main dashcore repo for information about how to contribute.
+See [CONTRIBUTING.md](https://github.com/galactrum/galactrum/blob/master/CONTRIBUTING.md) on the main Galactrum repo for information about how to contribute.
 
 ## License
 
-Code released under [the MIT license](https://github.com/dachevo/dashcore/blob/master/LICENSE).
+Code released under [the MIT license](https://github.com/GAB5TER/galactrum-p2p/blob/master/LICENSE).
 
 Copyright 2013-2015 BitPay, Inc. Bitcore is a trademark maintained by BitPay, Inc.
