@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
-var bitcoreTasks = require('galactrum-build');
+var bitcoreTasks = require('orecore-build');
 
 bitcoreTasks('p2p', {skipBrowser: true});
 

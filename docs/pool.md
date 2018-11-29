@@ -5,8 +5,8 @@ The quickest way to get connected is to run the following:
 
 ```javascript
 
-var Pool = require('galactrum-p2p').Pool;
-var Networks = require('galactrum-lib').Networks;
+var Pool = require('orecore-p2p').Pool;
+var Networks = require('orecore-lib').Networks;
 
 var pool = new Pool({network: Networks.livenet});
 

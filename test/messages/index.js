@@ -7,7 +7,7 @@ var Buffers = require('node-buffers');
 var P2P = require('../../');
 var Messages = P2P.Messages;
 var messages = new Messages();
-var bitcore = require('galactrum-lib');
+var bitcore = require('orecore-lib');
 var Data = require('../data/messages'); //todo merge with commandData
 var commandData = require('../data/messages.json');
 

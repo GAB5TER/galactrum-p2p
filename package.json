@@ -1,5 +1,5 @@
 {
-  "name": "galactrum-p2p",
+  "name": "orecore-p2p",
   "version": "1.1.6",
   "description": "Interface to the Galactrum P2P network",
   "author": "BitPay <dev@bitpay.com>",
@@ -58,13 +58,13 @@
     "url": "https://github.com/GAB5TER/glactrum-p2p.git"
   },
   "dependencies": {
-    "galactrum-lib": "GAB5TER/galactrum-lib",
+    "orecore-lib": "GAB5TER/orecore-lib",
     "bloom-filter": "^0.2.0",
     "node-buffers": "^0.1.1",
     "socks5-client": "^0.3.6"
   },
   "devDependencies": {
-    "galactrum-build": "GAB5TER/galactrum-build",
+    "orecore-build": "GAB5TER/orecore-build",
     "brfs": "^1.2.0",
     "chai": "~1.10.0",
     "gulp": "^3.8.10",
