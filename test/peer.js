@@ -10,20 +10,19 @@ var expect = chai.expect;
 var sinon = require('sinon');
 var fs = require('fs');
 
-var bitcore = require('orecore-lib');
-var _ = bitcore.deps._;
+var orecore = require('orecore-lib');
+var _ = orecore.deps._;
 var P2P = require('../');
 var Peer = P2P.Peer;
 var EventEmitter = require('events').EventEmitter;
 var Messages = P2P.Messages;
 var messages = new Messages();
-var Networks = bitcore.Networks;
+var Networks = orecore.Networks;
 
 describe('Peer', function() {
 
   describe('Integration test', function() {
     it('parses this stream of data from a connection', function(callback) {
-      debugger;
       var peer = new Peer('');
       var stub = sinon.stub();
       var dataCallback;
@@ -119,7 +118,7 @@ describe('Peer', function() {
     peer2.proxy.host.should.equal('127.0.0.1');
     peer2.proxy.port.should.equal(9050);
     socket = peer2._getSocket();
-    socket.should.be.instanceof(Socks5Client);
+    socket.should.be.instanceof(Socks5Client.Socket);
 
     peer.should.equal(peer2);
   });
@@ -173,6 +172,7 @@ describe('Peer', function() {
   });
 
   it('disconnect with max buffer length', function(done) {
+    this.timeout(15000);
     var peer = new Peer({host: 'localhost'});
     var socket = new EventEmitter();
     socket.connect = sinon.spy();

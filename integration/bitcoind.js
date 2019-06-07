@@ -6,40 +6,40 @@ var chai = require('chai');
 var should = chai.should();
 var sinon = require('sinon');
 
-var bitcore = require('orecore-lib');
-var _ = bitcore.deps._;
-var Random = bitcore.crypto.Random;
-var BN = bitcore.crypto.BN;
-var BufferUtil = bitcore.util.buffer;
+var orecore = require('orecore-lib');
+var _ = orecore.deps._;
+var Random = orecore.crypto.Random;
+var BN = orecore.crypto.BN;
+var BufferUtil = orecore.util.buffer;
 var p2p = require('../');
 var Peer = p2p.Peer;
 var Pool = p2p.Pool;
-var Networks = bitcore.Networks;
+var Networks = orecore.Networks;
 var Messages = p2p.Messages;
 var Inventory = p2p.Inventory;
-var Block = bitcore.Block;
-var Transaction = bitcore.Transaction;
+var Block = orecore.Block;
+var Transaction = orecore.Transaction;
 
-// config 
+// config
 var network = process.env.NETWORK === 'testnet' ? Networks.testnet : Networks.livenet;
 var messages = new Messages({
   network: network
 });
 var blockHash = {
-  'livenet': '0000000000010eedb86810ef7ce941fabc7d2be0c0fa2bf8dfcb5b48f573d15b',
-  'testnet': '0000000058cc069d964711cd25083c0a709f4df2b34c8ff9302ce71fe5b45786'
+  'livenet': '00000000003ef7b9adb4162d20427238375abbe313d65df4187667115454d822',
+  'testnet': '000001d3e796011e031d82e4196ffe748460d2cc5be10432cfa1258e37bf82ac'
 };
 var stopBlock = {
-  'livenet': '000000000014838031ed3c985716212e048a7e2a6bcd84ad8591587c38f4597a',
-  'testnet': '00000000d0bc4271bcefaa7eb25000e345910ba16b91eb375cd944b68624de9f'
+  'livenet': '0000000000211d8948271e856637829059b2f6f569efe73c64dde0ce85dca985',
+  'testnet': '00000174d18b1123125d8fc55b42516ff9ea6b1b86d1065b5069e1a4858a8e31'
 };
 var txHash = {
-  'livenet': 'c38e4e2e65d669fdc5eba65f7127dda7aa9394c1d51e60f34712d0b6fb8843b0',
-  'testnet': '22231e8219a0617a0ded618b5dc713fdf9b0db8ebd5bb3322d3011a703119d3b'
+  'livenet': 'a5bf363461906769ce5c5c5a48994ae80b8af439dff4c7a579d482c2de5ee265',
+  'testnet': '44949f8c999f59f7dfc999ac3916579a3b58b2740d6142efd2bacefd9fceda2d'
 };
 
-// These tests require a running bitcoind instance
-describe('Integration with ' + network.name + ' bitcoind', function() {
+// These tests require a running galactrumd instance
+describe('Integration with ' + network.name + ' galactrumd', function() {
 
   this.timeout(15000);
   var opts = {
@@ -49,11 +49,11 @@ describe('Integration with ' + network.name + ' bitcoind', function() {
   it('handshakes', function(cb) {
     var peer = new Peer(opts);
     peer.once('version', function(m) {
-      m.version.should.be.above(70000);
-      m.services.toString().should.equal('1');
+      m.version.should.be.above(70200);
+      m.services.toString().should.equal('5');
       Math.abs(new Date() - m.timestamp).should.be.below(10000); // less than 10 seconds of time difference
       m.nonce.length.should.equal(8);
-      m.startHeight.should.be.above(300000);
+      m.startHeight.should.be.above(240000);
       cb();
     });
     peer.once('verack', function(m) {
@@ -74,7 +74,7 @@ describe('Integration with ' + network.name + ' bitcoind', function() {
   };
   it('connects', function(cb) {
     connect(function(peer) {
-      peer.version.should.be.above(70000);
+      peer.version.should.be.above(70200);
       _.isString(peer.subversion).should.equal(true);
       _.isNumber(peer.bestHeight).should.equal(true);
       cb();
@@ -167,7 +167,7 @@ describe('Integration with ' + network.name + ' bitcoind', function() {
     connect(function(peer) {
       peer.once('headers', function(message) {
         message.command.should.equal('headers');
-        message.headers.length.should.equal(3);
+        message.headers.length.should.equal(4);
         cb();
       });
       var message = messages.GetHeaders({

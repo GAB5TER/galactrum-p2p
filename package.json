@@ -1,14 +1,13 @@
 {
   "name": "orecore-p2p",
-  "version": "1.1.6",
+  "version": "1.1.9",
   "description": "Interface to the Galactrum P2P network",
   "author": "BitPay <dev@bitpay.com>",
   "main": "index.js",
   "scripts": {
-    "lint": "gulp lint",
-    "test": "gulp test:node",
-    "coverage": "gulp coverage",
-    "build": "gulp"
+    "lint": "eslint .",
+    "test": "mocha",
+    "coverage": "nyc mocha"
   },
   "contributors": [
     {
@@ -50,8 +49,9 @@
   "keywords": [
     "bitcoin",
     "bitcore",
-    "dashcore",
-    "galactrum"
+    "galactrum",
+    "orecore",
+    "dashcore"
   ],
   "repository": {
     "type": "git",
@@ -60,14 +60,18 @@
   "dependencies": {
     "orecore-lib": "GAB5TER/orecore-lib",
     "bloom-filter": "^0.2.0",
+    "mocha": "^5.2.0",
     "node-buffers": "^0.1.1",
-    "socks5-client": "^0.3.6"
+    "socks5-client": "^1.2.6"
   },
   "devDependencies": {
-    "orecore-build": "GAB5TER/orecore-build",
     "brfs": "^1.2.0",
     "chai": "~1.10.0",
-    "gulp": "^3.8.10",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "sinon": "^1.12.2"
   },
   "license": "MIT"

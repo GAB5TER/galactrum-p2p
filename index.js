@@ -1,4 +1,4 @@
-var bitcore = require('orecore-lib');
-bitcore.P2P = require('./lib');
+var orecore = require('orecore-lib');
+orecore.P2P = require('./lib');
 
-module.exports = bitcore.P2P;
+module.exports = orecore.P2P;

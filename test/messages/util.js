@@ -4,8 +4,8 @@
 
 var should = require('chai').should();
 var utils = require('../../lib/messages/utils');
-var bitcore = require('orecore-lib');
-var BufferReader = bitcore.encoding.BufferReader;
+var orecore = require('orecore-lib');
+var BufferReader = orecore.encoding.BufferReader;
 
 describe('Message Utils', function() {
 

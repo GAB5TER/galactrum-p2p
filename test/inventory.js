@@ -4,12 +4,12 @@
 
 var should = require('chai').should();
 
-var bitcore = require('orecore-lib');
+var orecore = require('orecore-lib');
 var P2P = require('../');
 var Inventory = P2P.Inventory;
-var BufferUtils = bitcore.util.buffer;
-var BufferWriter = bitcore.encoding.BufferWriter;
-var BufferReader = bitcore.encoding.BufferReader;
+var BufferUtils = orecore.util.buffer;
+var BufferWriter = orecore.encoding.BufferWriter;
+var BufferReader = orecore.encoding.BufferReader;
 
 describe('Inventory', function() {
 

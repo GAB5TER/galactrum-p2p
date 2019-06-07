@@ -1,8 +1,8 @@
 'use strict';
 
 var gulp = require('gulp');
-var bitcoreTasks = require('orecore-build');
+var orecoreTasks = require('orecore-build');
 
-bitcoreTasks('p2p', {skipBrowser: true});
+orecoreTasks('p2p', {skipBrowser: true});
 
 gulp.task('default', ['lint', 'coverage']);
